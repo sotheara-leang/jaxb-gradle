@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings version="2.1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<jaxb:bindings schemaLocation="../schema/pain.001.001.05.xsd" node="/xs:schema">
+		
+		<jaxb:schemaBindings>
+        	<jaxb:package name="com.example.jaxb.domain.pain_001_001_05"></jaxb:package>
+      	</jaxb:schemaBindings>
+
+		<jaxb:bindings node="//xs:complexType[@name='Document']">
+			<jaxb:bindings node=".//xs:element[@name='CstmrCdtTrfInitn']">
+				<jaxb:property name="CustomerCreditTransferInitiation" />
+			</jaxb:bindings>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="//xs:complexType[@name='CustomerCreditTransferInitiationV05']">
+			<jaxb:bindings node=".//xs:element[@name='GrpHdr']">
+				<jaxb:property name="GroupHeader" />
+			</jaxb:bindings>
+			<jaxb:bindings node=".//xs:element[@name='PmtInf']">
+				<jaxb:property name="PaymentInstructions" />
+			</jaxb:bindings>
+			<jaxb:bindings node=".//xs:element[@name='SplmtryData']">
+				<jaxb:property name="SupplementaryDatas" />
+			</jaxb:bindings>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="//xs:complexType[@name='GroupHeader48']">
+			<jaxb:bindings node=".//xs:element[@name='MsgId']">
+				<jaxb:property name="MessageId" />
+			</jaxb:bindings>
+			<jaxb:bindings node=".//xs:element[@name='CreDtTm']">
+				<jaxb:property name="CreateDateTime" />
+			</jaxb:bindings>
+			<jaxb:bindings node=".//xs:element[@name='Authstn']">
+				<jaxb:property name="AuthorisationChoices" />
+			</jaxb:bindings>
+			<jaxb:bindings node=".//xs:element[@name='NbOfTxs']">
+				<jaxb:property name="TransactionNumber" />
+			</jaxb:bindings>
+			<jaxb:bindings node=".//xs:element[@name='InitgPty']">
+				<jaxb:property name="PartyIdentification" />
+			</jaxb:bindings>
+			<jaxb:bindings node=".//xs:element[@name='FwdgAgt']">
+				<jaxb:property name="BranchAndFinancialInstitutionIdentification" />
+			</jaxb:bindings>
+		</jaxb:bindings>
+
+	</jaxb:bindings>
+
+</jaxb:bindings>
