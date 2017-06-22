@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jaxb:bindings version="2.1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annox="http://annox.dev.java.net"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+	version="2.1">
+	
 	<jaxb:bindings schemaLocation="../schema/pain.007.001.06.xsd" node="/xs:schema">
 
 		<jaxb:schemaBindings>
-        	<jaxb:package name="com.example.jaxb.domain.pain_007_001_06"></jaxb:package>
-      	</jaxb:schemaBindings>
-      	
+			<jaxb:package name="com.example.jaxb.domain.pain_007_001_06"></jaxb:package>
+		</jaxb:schemaBindings>
+
 		<jaxb:bindings node="//xs:complexType[@name='Document']">
+			<annox:annotate>
+                <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Document" />
+            </annox:annotate>
 			<jaxb:bindings node=".//xs:element[@name='CstmrPmtRvsl']">
 				<jaxb:property name="CustomerPaymentReversal" />
 			</jaxb:bindings>
