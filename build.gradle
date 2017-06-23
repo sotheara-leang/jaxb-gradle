@@ -46,7 +46,7 @@ jaxb {
 	
   	xsdDir 					= 'src/main/resources/schema'
   	bindingsDir				= 'src/main/resources/binding'
-	bindings				= ['pain.001.001.05.xjb','pain.002.001.07.xjb', 'pain.007.001.06.xjb']
+	bindings				= ['global.xjb', 'pain.001.001.05.xjb','pain.002.001.07.xjb', 'pain.007.001.06.xjb']
   	xjc {
 		taskClassname      	= 'org.jvnet.jaxb2_commons.xjc.XJC2Task'
 		args               	= ['-Xinheritance', '-Xannotate', '-Xsetters', '-Xsetters-mode=direct', '-XJsr303Annotations', '-XtoString', '-XtoString-toStringStrategyClass=com.example.jaxb.util.JAXBToStringStrategy']
