@@ -25,6 +25,13 @@ jar {
     }
 }
 
+ext {
+	jaxb2CommonsVersion = '1.11.1'
+	jaxb2CommonsAnnotateVersion = '1.0.2'
+	xjcVersion = '2.2.11'
+	jaxbToolsVersion = '1.5'
+}
+
 repositories {
     jcenter()
 }
@@ -42,7 +49,7 @@ jaxb {
   	bindings				= ['pain.001.001.05.xjb','pain.002.001.07.xjb', 'pain.007.001.06.xjb']
   	xjc {
     	taskClassname      	= 'org.jvnet.jaxb2_commons.xjc.XJC2Task'
-     	args               	= ['-Xinheritance', '-Xannotate', '-XReplacePrimitives', '-XJsr303Annotations']
+     	args               	= ['-Xinheritance', '-Xannotate', '-Xsetters', '-Xsetters-mode=direct', '-XReplacePrimitives', '-XJsr303Annotations']
   	}
 }
 
@@ -51,16 +58,20 @@ dependencies {
 	compile 'org.glassfish:avax.el:3.0.1-b08'
 
 	testCompile 'junit:junit:4.12'
-	  
-	jaxb 'org.jvnet.jaxb2_commons:jaxb2-basics-ant:0.6.5'
-  	jaxb 'org.jvnet.jaxb2_commons:jaxb2-basics:0.6.4'
-  	jaxb 'org.jvnet.jaxb2_commons:jaxb2-basics-annotate:0.6.4'
+	
+	 // JAXB
+    compile "org.jvnet.jaxb2_commons:jaxb2-basics-runtime:$jaxb2CommonsVersion"
+    
+  	jaxb "org.jvnet.jaxb2_commons:jaxb2-basics:$jaxb2CommonsVersion"
+  	jaxb "org.jvnet.jaxb2_commons:jaxb2-basics-ant:$jaxb2CommonsVersion"
+  	jaxb "org.jvnet.jaxb2_commons:jaxb2-basics-annotate:$jaxb2CommonsAnnotateVersion"
   	
-  	jaxb 'com.sun.xml.bind:jaxb-xjc:2.2.7-b41'
-  	jaxb 'com.sun.xml.bind:jaxb-impl:2.2.7-b41'
-  	jaxb 'javax.xml.bind:jaxb-api:2.2.7'
+  	jaxb "com.sun.xml.bind:jaxb-xjc:$xjcVersion"
+  	jaxb "com.sun.xml.bind:jaxb-core:$xjcVersion"
+  	jaxb "com.sun.xml.bind:jaxb-impl:$xjcVersion"
+  	jaxb "javax.xml.bind:jaxb-api:$xjcVersion"
   	
-  	jaxb 'com.github.krasa:krasa-jaxb-tools:1.1'
+  	jaxb "com.github.krasa:krasa-jaxb-tools:$jaxbToolsVersion"
 }
 
 
